@@ -8,9 +8,8 @@ Este proyecto es una continuación del anterior:
 Este proyecto tiene fines educativos y busca:
 - Comprender el funcionamiento interno de Hibernate
 - Implementar manualmente patrones comunes (Repository, Service, Singleton)
+- Intencionalmente no se utiliza Spring, para enfocarse en los fundamentos del ORM.
 
-
-📌 Intencionalmente no se utiliza Spring, para enfocarse en los fundamentos del ORM.
 ---
 # Tennologias:
 - PostgreSQL como base de datos
