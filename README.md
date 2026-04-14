@@ -1,7 +1,7 @@
 # AMBL CON HIBERNATE.
 
-Este proyecto es una continuación del anterior:
--> [Hibernate-tp3](https://github.com/CarlosZubilete/java-hibernate-tp3)
+Este proyecto es una continuación del anterior.
+[Hibernate-tp3](https://github.com/CarlosZubilete/java-hibernate-tp3)
 -- 
 
 # Alcance del proyecto
@@ -62,8 +62,10 @@ public static SessionFactory getSessionFactory() {
     return sessionFactory;
 }
 ```
+
 **Nota**: Esta implementación no es thread-safe. 
 En entornos productivos se recomienda usar inicialización estática o mecanismos seguros para concurrencia.
+
 ---
 
 **B. Responsabilidades de `HibernateUtil`**
@@ -130,6 +132,7 @@ Esta capa:
     - Desacopla la lógica del acceso a datos (Repository.java)
 
 --- 
+
 **Implementación genérica**
 
 ```GenericRepository.java
@@ -222,7 +225,9 @@ public interface IService<T>{
     public abstract boolean delete (Long id);
 }
 ```
+
 ---
+
 B. **Servicios específicos**
 
 Para lógica particular, se pueden extender los servicios genéricos:
@@ -242,6 +247,7 @@ public class DoctorService extends GenericService<Doctor>{
 ---
 
 **Arquitectura general**
+
 ~~~
 Service (lógica + transacciones)
         ↓
