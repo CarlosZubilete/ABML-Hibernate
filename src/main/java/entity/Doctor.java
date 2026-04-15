@@ -15,7 +15,7 @@ public class Doctor extends Person{
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_specialization")
-    private Specialization specializationType;
+    private Specialization specialization;
 
     public Doctor(){}
 
@@ -25,11 +25,11 @@ public class Doctor extends Person{
     }
 
     public Specialization getSpecialization() {
-        return specializationType;
+        return specialization;
     }
 
     public void setSpecialization(Specialization specializationType) {
-        this.specializationType = specializationType;
+        this.specialization = specializationType;
     }
 
     public String getEmployeeId() {
@@ -44,7 +44,7 @@ public class Doctor extends Person{
     public String toString() {
         return " Doctor { " +
             " employeeId = '" + employeeId + '\'' +
-            '}' + " " + specializationType.getSpecialization() + " "
+            '}' + " " + specialization.getSpecialization() + " "
             + super.getFirstName() +  " " + super.getLastName() + " " + super.getDni();
     }
 }

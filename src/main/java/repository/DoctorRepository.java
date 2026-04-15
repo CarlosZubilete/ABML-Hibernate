@@ -22,7 +22,7 @@ public class DoctorRepository extends Repository<Doctor>{
     public List<Doctor> findBySpeciality(Session session, SpecializationType specialization) {
         return session
             // .createQuery("FROM Doctor doc WHERE doc.nameClassComposition.nameClass = :specialization", Doctor.class)
-            .createQuery("FROM Doctor doc WHERE doc.specializationType.specialization = :specialization", Doctor.class)
+            .createQuery("FROM Doctor doc WHERE doc.specialization.specialization = :specialization", Doctor.class)
             .setParameter("specialization", specialization)
             .list();
     }

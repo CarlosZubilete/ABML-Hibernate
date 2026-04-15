@@ -11,13 +11,13 @@
         <property name="hibernate.connection.password">javauser</property>
         <property name="hibernate.dialect"> org.hibernate.dialect.PostgreSQLDialect </property>
         <property name="hibernate.show_sql">true</property>
-<!--        <property name="hibernate.hbm2ddl.auto">create</property> -->
-        <property name="hibernate.hbm2ddl.auto"> update </property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+<!--        <property name="hibernate.hbm2ddl.auto"> update </property>-->
         <mapping class="entity.Doctor" />
         <mapping class="entity.Patient" />
         <mapping class="entity.User" />
         <mapping class="entity.Specialization" />
-
+        <mapping class="entity.Appointment"/>
         <!--        <mapping resource="com/example/entity/Class.hbm.xml"/>-->
     </session-factory>
 </hibernate-configuration>

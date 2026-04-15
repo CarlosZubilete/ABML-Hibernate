@@ -4,7 +4,9 @@ package hibernate.main;
 import config.HibernateUtil;
 import data.HandleData;
 import entity.Doctor;
+import entity.User;
 import service.DoctorService;
+import service.UserService;
 import types.SpecializationType;
 
 import java.util.List;
@@ -14,22 +16,19 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-//        HandleData.addDoctors();
-//
-//        HandleData.addPatients();
-//
-//        HandleData.addUsers();
-//
-//        HandleData.addSpecializations();
-//
-//        HandleData.updateDoctorWhitSpecialization();
+        HandleData.addDoctors();
 
-        DoctorService doctorService = new DoctorService();
-        List<Doctor> doctorList = doctorService.findBySpeciality(SpecializationType.PEDIATRIA);
+        HandleData.addPatients();
 
-        for ( Doctor doc : doctorList) {
-            System.out.println(doc.toString());
-        }
+        HandleData.addUsers();
+
+        HandleData.addSpecializations();
+
+        HandleData.updateDoctorWhitSpecialization();
+
+        HandleData.updateDoctorWhitUser();
+
+        HandleData.updateAppointments();
 
         HibernateUtil.shutdown();
     }

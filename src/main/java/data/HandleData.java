@@ -1,13 +1,7 @@
 package data;
 
-import entity.Doctor;
-import entity.Patient;
-import entity.Specialization;
-import entity.User;
-import service.DoctorService;
-import service.PatientService;
-import service.SpecializationService;
-import service.UserService;
+import entity.*;
+import service.*;
 
 import java.util.List;
 
@@ -76,24 +70,38 @@ public class HandleData {
             Doctor d = doctors.get(i);
             d.setSpecialization(specializations.get(i));
             doctorService.update(d);
+        }
+    }
+
+    public static void updateDoctorWhitUser(){
+        UserService userService = new UserService();
+        List<User> users = userService.findAll();
+
+        DoctorService doctorService = new DoctorService();
+        List<Doctor> doctors = doctorService.findAll();
+
+        Doctor doctor = null;
+        for (int i = 0; i < users.size() ; i++) {
+            // 1. Get one doctor
+            doctor = doctors.get(i);
+            // 2. Set the doctor on the specific position.
+            users.get(i).setDoctor(doctor);
+            // 3. update the user.
+            userService.update(users.get(i));
 
         }
-        /*
-        int count = 0;
-        for ( Doctor doctor : doctors) {
-            doctor.setSpecialization(specializations);
-        }
-
-        Specialization pediatra = specializationService.findById(1L);
-
-        Doctor sofiaDoctor = doctorService.findByDni("20.345.678");
-
-        sofiaDoctor.setSpecialization(pediatra);
-        */
 
     }
 
+    public static void updateAppointments(){
+        AppointmentService appointmentService = new AppointmentService();
+        List<Appointment> appointments = AppointmentData.loadAppointments();
 
+        for ( Appointment appointment : appointments){
+            appointmentService.save(appointment);
+        }
+
+    }
 
 
 }

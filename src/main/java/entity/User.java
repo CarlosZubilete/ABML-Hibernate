@@ -70,4 +70,12 @@ public class User {
         return Objects.hashCode(email);
     }
 
+    @Override
+    public String toString() {
+        return " User {" +
+            " doctor = " + doctor +
+            ", id = " + id +
+            ", email = '" + email + '\'' +
+            '}';
+    }
 }
